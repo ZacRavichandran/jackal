@@ -21,10 +21,10 @@
         <param name="base_global_planner" type="string" value="global_planner/GlobalPlanner" />
         <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />
         <param name="global_costmap/global_frame" value="$(arg global_frame_id)"/>
-        <param name="global_costmap/robot_base_frame" value="$(arg ns)/$(arg base_frame_id)"/>
-        <param name="local_costmap/global_frame" value="$(arg ns)/$(arg odom_frame_id)"/>
-        <param name="local_costmap/robot_base_frame" value="$(arg ns)/$(arg base_frame_id)"/>
-        <param name="TrajectoryPlannerROS/global_frame_id" value="$(arg ns)/$(arg odom_frame_id)"/>
+        <param name="global_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+        <param name="local_costmap/global_frame" value="$(arg odom_frame_id)"/>
+        <param name="local_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+        <param name="TrajectoryPlannerROS/global_frame_id" value="$(arg odom_frame_id)"/>
 
         <remap from="odom" to="$(arg odom_topic)"/>
         <remap from="scan" to="$(arg pointcloud_topic)"/>
