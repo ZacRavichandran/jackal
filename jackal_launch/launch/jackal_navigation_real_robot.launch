@@ -8,6 +8,9 @@
     <arg name="pointcloud_topic" default="/ouster/points"/>
     <arg name="output" default="screen"/>
 
+    <arg name="min_obstacle_height" default="0.4"/>
+    <arg name="max_obstacle_height" default="100"/>
+
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="$(arg output)">
         <rosparam file="$(find jackal_navigation)/params/costmap_common_params.yaml" command="load" ns="global_costmap"/>
         <rosparam file="$(find jackal_navigation)/params/costmap_common_params.yaml" command="load" ns="local_costmap"/>
@@ -29,5 +32,8 @@
         <remap from="odom" to="$(arg odom_topic)"/>
         <remap from="scan" to="$(arg pointcloud_topic)"/>
         <remap from="cmd_vel" to="/twist_auto"/>
+
+        <param name="local_costmap/obstacles_layer/os_sensor/min_obstacle_height" value="$(arg min_obstacle_height)"/>
+        <param name="local_costmap/obstacles_layer/os_sensor/max_obstacle_height" value="$(arg max_obstacle_height)"/>
     </node>
 </launch>
