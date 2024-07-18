@@ -39,10 +39,13 @@
         <remap from="scan" to="$(arg pointcloud_topic)"/>
         <remap from="cmd_vel" to="/twist_auto"/>
 
-        <param name="local_costmap/obstacles_layer/os_sensor/min_obstacle_height" value="$(arg min_obstacle_height)"/>
-        <param name="local_costmap/obstacles_layer/os_sensor/max_obstacle_height" value="$(arg max_obstacle_height)"/>
-        <param name="local_costmap/obstacles_layer/os_sensor/topic" value="$(arg topic)"/>
+        <param name="local_costmap/obstacles_layer/os1_lidar/min_obstacle_height" value="$(arg min_obstacle_height)"/>
+        <param name="local_costmap/obstacles_layer/os1_lidar/max_obstacle_height" value="$(arg max_obstacle_height)"/>
+        <param name="local_costmap/obstacles_layer/os1_lidar/topic" value="$(arg topic)"/>
+
+        <param name="local_costmap/origin_z" value="$(arg origin_z)"/>
         <param name="local_costmap/obstacles_layer/origin_z" value="$(arg origin_z)"/>
+
         <param name="local_costmap/obstacles_layer/obstacles_range" value="$(arg obstacles_range)"/>
         <param name="local_costmap/obstacles_layer/raytrace_range" value="$(arg raytrace_range)"/>
     </node>
