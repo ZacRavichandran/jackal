@@ -54,7 +54,7 @@
         <param name="local_costmap/obstacles_layer/raytrace_range" value="$(arg raytrace_range)"/>
 
 	<param name="local_costmap/inflation_layer/inflation_radius" value="$(arg inflation)"/>
-	<param name="local_costmap/static_layer/lethal_cost/threshold" value="$(arg lethal_cost)"/>
+	<param name="local_costmap/static_layer/lethal_cost_threshold" value="$(arg lethal_cost)"/>
 
 
     </node>
