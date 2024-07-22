@@ -14,6 +14,10 @@
     <arg name="obstacles_range" default="5"/>
     <arg name="raytrace_range" default="5.5"/>
 
+    <arg name="costmap_size" default="10"/>
+    <arg name="lethality_threshold" default="70"/>
+    <arg name="inflate_radius" default="0.4"/>
+
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="$(arg output)">
         <rosparam file="$(find jackal_navigation)/params/costmap_common_params.yaml" command="load" ns="global_costmap"/>
@@ -42,5 +46,11 @@
         <param name="local_costmap/obstacles_layer/origin_z" value="$(arg origin_z)"/>
         <param name="local_costmap/obstacles_layer/obstacles_range" value="$(arg obstacles_range)"/>
         <param name="local_costmap/obstacles_layer/raytrace_range" value="$(arg raytrace_range)"/>
+
+        <param name="local_costmap/width" value="$(arg costmap_size)"/>
+        <param name="local_costmap/height" value="$(arg costmap_size)"/>
+
+        <param name="local_costmap/inflater_layer/inflate_radius" value="$(arg inflate_radius)"/>
+        <param name="local_costmap/static_layer/lethal_cost_threshold" value="$(arg lethality_threshold)"/>
     </node>
 </launch>
