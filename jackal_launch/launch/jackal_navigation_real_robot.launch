@@ -45,6 +45,9 @@
 
         <param name="local_costmap/obstacles_layer/os1_lidar/min_obstacle_height" value="$(arg min_obstacle_height)"/>
         <param name="local_costmap/obstacles_layer/os1_lidar/max_obstacle_height" value="$(arg max_obstacle_height)"/>
+	<param name="local_costmap/obstacles_layer/os1_lidar/obstacle_range" value="$(arg obstacles_range)"/>
+
+
         <param name="local_costmap/obstacles_layer/os1_lidar/topic" value="$(arg topic)"/>
 
         <param name="local_costmap/origin_z" value="$(arg origin_z)"/>
