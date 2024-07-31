@@ -20,6 +20,9 @@
     <arg name="lethality_threshold" default="70"/>
     <arg name="inflate_radius" default="0.4"/>
 
+    <!-- typically 4. increase due to low yaw -->
+    <arg name="oscillation_timeout" default="8"/>
+
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="$(arg output)">
         <rosparam file="$(find jackal_navigation)/params/costmap_common_params.yaml" command="load" ns="global_costmap"/>
@@ -45,7 +48,7 @@
 
         <param name="local_costmap/obstacles_layer/os1_lidar/min_obstacle_height" value="$(arg min_obstacle_height)"/>
         <param name="local_costmap/obstacles_layer/os1_lidar/max_obstacle_height" value="$(arg max_obstacle_height)"/>
-	<param name="local_costmap/obstacles_layer/os1_lidar/obstacle_range" value="$(arg obstacles_range)"/>
+        <param name="local_costmap/obstacles_layer/os1_lidar/obstacle_range" value="$(arg obstacles_range)"/>
 
 
         <param name="local_costmap/obstacles_layer/os1_lidar/topic" value="$(arg topic)"/>
@@ -61,5 +64,7 @@
 
         <param name="local_costmap/inflater_layer/inflate_radius" value="$(arg inflate_radius)"/>
         <param name="local_costmap/static_layer/lethal_cost_threshold" value="$(arg lethality_threshold)"/>
+
+        <param name="oscillation_timeout" value="$(arg oscillation_timeout)"/>
     </node>
 </launch>
