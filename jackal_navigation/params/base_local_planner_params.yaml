@@ -2,13 +2,13 @@ TrajectoryPlannerROS:
 
   # Robot Configuration Parameters
   acc_lim_x: 5
-  acc_lim_theta: 17
+  acc_lim_theta: 3  # 17, but that was too high
 
-  max_vel_x: 2.0
+  max_vel_x: 5.0  # try increasing vel limit so jackal doesn't jerk
   min_vel_x: 0.1
 
-  max_vel_theta: 0.3
-  min_vel_theta: -0.3
+  max_vel_theta: 3.0 # 0.3, decreasing max accel allows for faster vel
+  min_vel_theta: -3.0 # -0.3
   min_in_place_vel_theta: 0.1
 
   holonomic_robot: false
