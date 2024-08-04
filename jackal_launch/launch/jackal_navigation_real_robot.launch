@@ -21,7 +21,7 @@
     <arg name="inflate_radius" default="0.4"/>
 
     <!-- typically 4. increase due to low yaw -->
-    <arg name="oscillation_timeout" default="8"/>
+    <arg name="oscillation_timeout" default="16"/>
 
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="$(arg output)">
