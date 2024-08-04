@@ -15,12 +15,12 @@ TrajectoryPlannerROS:
   escape_vel: -0.5
 
   # Goal Tolerance Parameters
-  yaw_goal_tolerance: 0.2
-  xy_goal_tolerance: 0.25
+  yaw_goal_tolerance: 0.5
+  xy_goal_tolerance: 0.5
   latch_xy_goal_tolerance: false
 
   # Forward Simulation Parameters
-  sim_time: 2.0
+  sim_time: 5.0
   sim_granularity: 0.02
   angular_sim_granularity: 0.02
   vx_samples: 6
