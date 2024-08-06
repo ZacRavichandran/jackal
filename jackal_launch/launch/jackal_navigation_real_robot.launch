@@ -21,7 +21,7 @@
     <arg name="inflate_radius" default="0.4"/>
 
     <!-- typically 4. increase due to low yaw -->
-    <arg name="oscillation_timeout" default="8"/>
+    <arg name="oscillation_timeout" default="16"/>
 
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="$(arg output)">
@@ -50,7 +50,6 @@
         <param name="local_costmap/obstacles_layer/os1_lidar/max_obstacle_height" value="$(arg max_obstacle_height)"/>
         <param name="local_costmap/obstacles_layer/os1_lidar/obstacle_range" value="$(arg obstacles_range)"/>
 
-
         <param name="local_costmap/obstacles_layer/os1_lidar/topic" value="$(arg topic)"/>
 
         <param name="local_costmap/origin_z" value="$(arg origin_z)"/>
@@ -64,6 +63,18 @@
 
         <param name="local_costmap/inflater_layer/inflate_radius" value="$(arg inflate_radius)"/>
         <param name="local_costmap/static_layer/lethal_cost_threshold" value="$(arg lethality_threshold)"/>
+
+        <param name="global_costmap/obstacles_layer/os1_lidar/min_obstacle_height" value="$(arg min_obstacle_height)"/>
+        <param name="global_costmap/obstacles_layer/os1_lidar/max_obstacle_height" value="$(arg max_obstacle_height)"/>
+        <param name="global_costmap/obstacles_layer/os1_lidar/obstacle_range" value="$(arg obstacles_range)"/>
+
+        <param name="global_costmap/obstacles_layer/os1_lidar/topic" value="$(arg topic)"/>
+
+        <param name="global_costmap/obstacles_layer/obstacles_range" value="$(arg obstacles_range)"/>
+        <param name="global_costmap/obstacles_layer/raytrace_range" value="$(arg raytrace_range)"/>
+
+        <param name="global_costmap/inflater_layer/inflate_radius" value="$(arg inflate_radius)"/>
+        <param name="global_costmap/static_layer/lethal_cost_threshold" value="$(arg lethality_threshold)"/>
 
         <param name="oscillation_timeout" value="$(arg oscillation_timeout)"/>
     </node>
