@@ -8,7 +8,7 @@
     <arg name="pointcloud_topic" default="/ouster/points"/>
     <arg name="output" default="screen"/>
 
-    <arg name="min_obstacle_height" default="0.4"/>
+    <arg name="min_obstacle_height" default="-100"/>
     <arg name="max_obstacle_height" default="100"/>
     <arg name="origin_z" default="0"/>
     <arg name="obstacles_range" default="3"/>
@@ -18,7 +18,7 @@
 
     <arg name="costmap_size" default="10"/>
     <arg name="lethality_threshold" default="70"/>
-    <arg name="inflate_radius" default="0.4"/>
+    <arg name="inflation_radius" default="0.4"/>
 
     <!-- typically 4. increase due to low yaw -->
     <arg name="oscillation_timeout" default="16"/>
@@ -61,7 +61,9 @@
         <param name="local_costmap/width" value="$(arg costmap_size)"/>
         <param name="local_costmap/height" value="$(arg costmap_size)"/>
 
-        <param name="local_costmap/inflater_layer/inflate_radius" value="$(arg inflate_radius)"/>
+        <param name="local_costmap/max_obstacle_height" value="$(arg max_obstacle_height)"/>
+
+        <param name="local_costmap/inflater_layer/inflation_radius" value="$(arg inflation_radius)"/>
         <param name="local_costmap/static_layer/lethal_cost_threshold" value="$(arg lethality_threshold)"/>
 
         <param name="global_costmap/obstacles_layer/os1_lidar/min_obstacle_height" value="$(arg min_obstacle_height)"/>
@@ -73,7 +75,7 @@
         <param name="global_costmap/obstacles_layer/obstacles_range" value="$(arg obstacles_range)"/>
         <param name="global_costmap/obstacles_layer/raytrace_range" value="$(arg raytrace_range)"/>
 
-        <param name="global_costmap/inflater_layer/inflate_radius" value="$(arg inflate_radius)"/>
+        <param name="global_costmap/inflater_layer/inflation_radius" value="$(arg inflation_radius)"/>
         <param name="global_costmap/static_layer/lethal_cost_threshold" value="$(arg lethality_threshold)"/>
 
         <param name="oscillation_timeout" value="$(arg oscillation_timeout)"/>
