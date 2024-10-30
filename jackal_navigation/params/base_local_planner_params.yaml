@@ -5,7 +5,7 @@ TrajectoryPlannerROS:
   acc_lim_theta: 20  # 17, but that was too high
 
   max_vel_x: 2  # try increasing vel limit so jackal doesn't jerk
-  min_vel_x: 0.7
+  min_vel_x: 1
 
   max_vel_theta: 1.57 # 0.3, decreasing max accel allows for faster vel
   min_vel_theta: -1.57 # -0.3
@@ -25,7 +25,7 @@ TrajectoryPlannerROS:
   angular_sim_granularity: 0.1
   vx_samples: 50
   vtheta_samples: 50
-  controller_frequency: 50.0
+  controller_frequency: 200.0
 
   # Trajectory scoring parameters
   meter_scoring: true # Whether the gdist_scale and pdist_scale parameters should assume that goal_distance and path_distance are expressed in units of meters or cells. Cells are assumed by default (false).
