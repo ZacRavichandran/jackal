@@ -4,8 +4,8 @@ TrajectoryPlannerROS:
   acc_lim_x: 2
   acc_lim_theta: 20  # 17, but that was too high
 
-  max_vel_x: 1.5  # try increasing vel limit so jackal doesn't jerk
-  min_vel_x: 0.3
+  max_vel_x: 2  # try increasing vel limit so jackal doesn't jerk
+  min_vel_x: 0.7
 
   max_vel_theta: 1.57 # 0.3, decreasing max accel allows for faster vel
   min_vel_theta: -1.57 # -0.3
