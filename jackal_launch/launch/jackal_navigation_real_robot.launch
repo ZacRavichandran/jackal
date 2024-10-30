@@ -44,7 +44,7 @@
 
         <remap from="odom" to="$(arg odom_topic)"/>
         <remap from="scan" to="$(arg pointcloud_topic)"/>
-        <remap from="cmd_vel" to="/twist_auto"/>
+	<remap from="cmd_vel" to="/warty/cmd_vel"/>
 
         <param name="local_costmap/obstacles_layer/os1_lidar/min_obstacle_height" value="$(arg min_obstacle_height)"/>
         <param name="local_costmap/obstacles_layer/os1_lidar/max_obstacle_height" value="$(arg max_obstacle_height)"/>
