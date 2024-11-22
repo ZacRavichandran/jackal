@@ -3,9 +3,9 @@
     <arg name="odom_frame_id" default="camera_init"/>
     <arg name="base_frame_id" default="base_link"/>
     <arg name="global_frame_id" default="map"/>
-    <arg name="odom_topic" default="/Odometry" />
+    <arg name="odom_topic" default="Odometry" />
     <arg name="ns" default="/"/>
-    <arg name="pointcloud_topic" default="/ouster/points"/>
+    <arg name="pointcloud_topic" default="ouster/points"/>
     <arg name="output" default="screen"/>
 
     <arg name="min_obstacle_height" default="-100"/>
