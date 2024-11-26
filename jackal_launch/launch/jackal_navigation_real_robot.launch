@@ -13,6 +13,7 @@
     <arg name="origin_z" default="0"/>
     <arg name="obstacles_range" default="3"/>
     <arg name="raytrace_range" default="3.5"/>
+    <arg name="footprint_padding" default="0.02"/>
 
     <arg name="topic" default="ouster/points"/>
 
@@ -60,6 +61,9 @@
 
         <param name="local_costmap/width" value="$(arg costmap_size)"/>
         <param name="local_costmap/height" value="$(arg costmap_size)"/>
+
+        <param name="local_costmap/footprint_padding" value="$(arg footprint_padding)"/>
+        <param name="global_costmap/footprint_padding" value="$(arg footprint_padding)"/>
 
         <param name="local_costmap/max_obstacle_height" value="$(arg max_obstacle_height)"/>
 
